@@ -13,6 +13,9 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
+const LOGO_SRC =
+  "/assets/uploads/screenshot_20260329-143037_instagram-019d3919-b9af-73fe-bc28-c2c9d1775282-1.jpg";
+
 const FLAVOURS = [
   {
     id: 1,
@@ -129,17 +132,17 @@ export default function App() {
       {/* Navbar */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-espresso/90 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             <a
               href="#home"
               className="flex items-center gap-3"
               data-ocid="nav.link"
             >
-              <div className="w-8 h-8 rounded-full gold-gradient flex items-center justify-center">
-                <span className="font-playfair text-sm font-bold text-[var(--espresso)]">
-                  V
-                </span>
-              </div>
+              <img
+                src={LOGO_SRC}
+                alt="Velmora logo"
+                className="h-14 w-14 rounded-full object-cover ring-2 ring-[var(--gold)]/40"
+              />
               <span className="font-playfair text-lg font-semibold text-gold tracking-wide">
                 Velmora
               </span>
@@ -203,7 +206,7 @@ export default function App() {
       {/* Hero */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center pt-16 overflow-hidden"
+        className="relative min-h-screen flex items-center pt-20 overflow-hidden"
       >
         <div className="absolute inset-0 vignette pointer-events-none z-10" />
         <div
@@ -219,6 +222,19 @@ export default function App() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
+              {/* Logo above hero title */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="mb-6"
+              >
+                <img
+                  src={LOGO_SRC}
+                  alt="Velmora"
+                  className="h-20 w-20 rounded-full object-cover ring-2 ring-[var(--gold)]/50 shadow-gold"
+                />
+              </motion.div>
               <SectionLabel>Handcrafted in India</SectionLabel>
               <h1 className="font-playfair text-6xl sm:text-7xl lg:text-8xl font-bold text-gold leading-none mb-4">
                 Velmora 🍫
@@ -578,11 +594,11 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-9 h-9 rounded-full gold-gradient flex items-center justify-center">
-                  <span className="font-playfair text-base font-bold text-[var(--espresso)]">
-                    V
-                  </span>
-                </div>
+                <img
+                  src={LOGO_SRC}
+                  alt="Velmora logo"
+                  className="h-10 w-10 rounded-full object-cover ring-1 ring-[var(--gold)]/40"
+                />
                 <span className="font-playfair text-xl font-semibold text-gold">
                   Velmora
                 </span>
