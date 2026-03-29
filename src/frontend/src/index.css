@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Velmora Dark Chocolate Theme */
+    --background: 0.09 0.012 40;
+    --foreground: 0.95 0.012 75;
+    --card: 0.13 0.015 40;
+    --card-foreground: 0.95 0.012 75;
+    --popover: 0.13 0.015 40;
+    --popover-foreground: 0.95 0.012 75;
+
+    /* Gold = primary */
+    --primary: 0.68 0.12 75;
+    --primary-foreground: 0.11 0.018 40;
+
+    --secondary: 0.18 0.022 40;
+    --secondary-foreground: 0.95 0.012 75;
+
+    --muted: 0.15 0.015 40;
+    --muted-foreground: 0.72 0.015 70;
+
+    --accent: 0.75 0.11 80;
+    --accent-foreground: 0.11 0.018 40;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.22 0.018 40;
+    --input: 0.22 0.018 40;
+    --ring: 0.68 0.12 75;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.11 0.015 40;
+    --sidebar-foreground: 0.95 0.012 75;
+    --sidebar-primary: 0.68 0.12 75;
+    --sidebar-primary-foreground: 0.11 0.018 40;
+    --sidebar-accent: 0.18 0.022 40;
+    --sidebar-accent-foreground: 0.95 0.012 75;
+    --sidebar-border: 0.22 0.018 40;
+    --sidebar-ring: 0.68 0.12 75;
+
+    /* Brand tokens */
+    --gold: oklch(0.68 0.12 75);
+    --gold-light: oklch(0.75 0.11 80);
+    --gold-dark: oklch(0.57 0.1 72);
+    --espresso: oklch(0.09 0.012 40);
+    --espresso-mid: oklch(0.13 0.015 40);
+    --espresso-light: oklch(0.18 0.022 40);
+    --cream: oklch(0.95 0.012 75);
+    --muted-cream: oklch(0.72 0.015 70);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", "Plus Jakarta Sans", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  .text-gold {
+    color: var(--gold);
+  }
+
+  .text-gold-light {
+    color: var(--gold-light);
+  }
+
+  .bg-espresso {
+    background-color: var(--espresso);
+  }
+
+  .bg-espresso-mid {
+    background-color: var(--espresso-mid);
+  }
+
+  .bg-espresso-light {
+    background-color: var(--espresso-light);
+  }
+
+  .border-gold {
+    border-color: var(--gold);
+  }
+
+  .vignette {
+    background: radial-gradient(
+      ellipse at center,
+      transparent 50%,
+      oklch(0.04 0.01 40 / 0.7) 100%
+    );
+  }
+
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--gold-light),
+      var(--gold),
+      var(--gold-dark)
+    );
+  }
+}
